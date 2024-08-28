@@ -1,10 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import CalendarEvent from '../components/CalendarEvent';
 
 const WritePage = () => {
     const navigate = useNavigate()
+    const [note, setNote] = useState('');
+    const [notes, setNotes] = useState([]);
 
+    const handleSaveNote = () => {
+        if (note.trim()) {
+            setNotes([...notes, note]);
+            setNote(''); // Clear the input after saving
+        }
+    };
     return (
         <><section className="rounded-2xl m-2 p-5 mb-10 bg-gray-100">
 
@@ -36,11 +44,47 @@ const WritePage = () => {
                             </svg>
                         </button>
 
-
                     </div>
                 </div>
             </div>
         </section>
+            <section>
+                <div className='border border-black m-2 '>
+
+                    <div className="p-4">
+
+                        <div className="mb-4">
+                            <input
+                                type="text"
+                                value={note}
+                                onChange={(e) => setNote(e.target.value)}
+                                placeholder="Enter a note"
+                                className="p-2 border border-gray-300 rounded"
+                            />
+                            <button
+                                onClick={handleSaveNote}
+                                className="ml-2 p-2 bg-blue-500 text-white rounded"
+                            >
+                                Save
+                            </button>
+                        </div>
+
+                        <div>
+                            {notes.length > 0 ? (
+                                <ul>
+                                    {notes.map((note, index) => (
+                                        <li key={index} className="mb-2 p-2 border-b border-gray-300">
+                                            {note}
+                                        </li>
+                                    ))}
+                                </ul>
+                            ) : (
+                                <p>No notes available. Start adding some!</p>
+                            )}
+                        </div>
+                    </div>
+                </div>
+            </section>
         </>
     )
 }

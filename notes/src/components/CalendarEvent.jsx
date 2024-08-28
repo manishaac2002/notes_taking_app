@@ -35,17 +35,21 @@ const CalendarEvent = () => {
       <section className='  border-l-4 border-gray-300 h-[1000px] '>
 
         {/* Calender module */}
-        <div className='border border-black m-4'>
+        <div className='border border-black m-2 '>
           {/* Add some styling to center the date */}
-          <div className='flex justify-center p-2'>
-            <p className='text-lg font-semibold'>{date.toDateString()}</p>
-          </div>
 
+            
+          <div className='flex justify-center p-2 m-2'>
+            <p className='text-3xl bg-gray-400 text-white font-semibold font-custom px-3 py-2 rounded-md'>Calendar</p>
+          </div>
+          <div className='flex justify-start p-2 m-4'>
+            <p className='text-3xl font-semibold text-gray-700 font-custom'>{date.toDateString()}</p>
+          </div>
           <div className='flex justify-center'>
             <Calendar
               onClickDay={handleDateClick}
               value={date}
-              className="custom-calendar font-sans-serif font-custom"
+              className="custom-calendar font-custom"
               onChange={setDate} // Ensure that the date updates correctly on calendar day click
             />
           </div>
