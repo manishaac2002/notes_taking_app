@@ -1,0 +1,20 @@
+.custom-calendar {
+  @apply w-full max-w-4xl bg-white p-6 rounded-lg shadow-lg ;
+}
+
+.custom-calendar .react-calendar__month-view__weekdays {
+  @apply bg-gray-200 text-2xl font-bold rounded;
+}
+
+.custom-calendar .react-calendar__tile {
+  @apply p-4 text-center hover:bg-blue-100 text-2xl; /* Increase font size */
+}
+
+.custom-calendar .react-calendar__tile--now {
+  @apply bg-blue-200 font-bold text-3xl; /* Bigger and bold font for today's date */
+}
+
+.custom-calendar .react-calendar__tile--active {
+  @apply bg-blue-500 text-white font-bold text-3xl; /* Bigger and bold font for selected date */
+}
+  
