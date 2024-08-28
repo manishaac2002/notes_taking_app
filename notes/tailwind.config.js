@@ -6,8 +6,8 @@ export default {
   ],
   theme: {
     extend: {
-      fontSize: {
-        'calendar-lg': '3rem', // Large text for the calendar
+      fontFamily: {
+        custom: ['Arial', 'sans-serif'], 
       },
     },
   },

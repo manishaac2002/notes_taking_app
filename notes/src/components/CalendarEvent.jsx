@@ -19,10 +19,10 @@ const CalendarEvent = () => {
 
     <div className="App grid grid-cols-2 gap-4 ">
 
-
+      {/* Notes module */}
       <div className='border border-black m-2 '>
 
-        <h2>Events:</h2>
+        <h2>Notes</h2>
         <ul>
           {events.map((event, index) => (
             <li key={index}>
@@ -31,16 +31,26 @@ const CalendarEvent = () => {
           ))}
         </ul>
       </div>
+
       <section className='  border-l-4 border-gray-300 h-[1000px] '>
 
-        <div className='border border-black m-4 flex justify-center items-center '>
+        {/* Calender module */}
+        <div className='border border-black m-4'>
+          {/* Add some styling to center the date */}
+          <div className='flex justify-center p-2'>
+            <p className='text-lg font-semibold'>{date.toDateString()}</p>
+          </div>
 
-          <Calendar
-            onClickDay={handleDateClick}
-            value={date}
-            className="custom-calendar "
-          />
+          <div className='flex justify-center'>
+            <Calendar
+              onClickDay={handleDateClick}
+              value={date}
+              className="custom-calendar font-sans-serif font-custom"
+              onChange={setDate} // Ensure that the date updates correctly on calendar day click
+            />
+          </div>
         </div>
+
       </section>
     </div>
   )

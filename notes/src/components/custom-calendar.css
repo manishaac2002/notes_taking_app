@@ -1,20 +1,43 @@
 .custom-calendar {
-  @apply w-full max-w-4xl bg-white p-6 rounded-lg shadow-lg ;
+  @apply w-full max-w-5xl bg-white p-6 rounded-lg shadow-lg;
+  font-family: 'Arial', 'sans-serif';
 }
 
 .custom-calendar .react-calendar__month-view__weekdays {
-  @apply bg-gray-200 text-2xl font-bold rounded;
+  @apply bg-gray-200 text-2xl font-bold rounded py-2 px-2;
+  font-weight: 500; 
 }
 
 .custom-calendar .react-calendar__tile {
-  @apply p-4 text-center hover:bg-blue-100 text-2xl; /* Increase font size */
+  @apply p-4 text-center rounded hover:bg-blue-100 text-2xl;
+  /* Increase font size */
 }
 
 .custom-calendar .react-calendar__tile--now {
-  @apply bg-blue-200 font-bold text-3xl; /* Bigger and bold font for today's date */
+  @apply bg-blue-200 rounded font-bold text-3xl;
+  /* Bigger and bold font for today's date */
 }
 
 .custom-calendar .react-calendar__tile--active {
-  @apply bg-blue-500 text-white font-bold text-3xl; /* Bigger and bold font for selected date */
+  @apply bg-blue-500 rounded text-white font-semibold text-3xl;
+  /* Bigger and bold font for selected date */
 }
-  
+
+
+/* Increase size of navigation icons */
+.react-calendar__navigation button {
+  font-size: 1.5rem;
+  /* Adjust size as needed */
+
+}
+
+/* Increase size of month display */
+.react-calendar__month-view__days__day {
+  font-size: 1.5rem;
+  /* Adjust size as needed */
+}
+
+.react-calendar__month-view__header__label {
+  font-size: 2rem;
+  /* Adjust size as needed */
+}
