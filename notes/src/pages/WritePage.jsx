@@ -51,38 +51,7 @@ const WritePage = () => {
             <section>
                 <div className='border border-black m-2 '>
 
-                    <div className="p-4">
-
-                        <div className="mb-4">
-                            <input
-                                type="text"
-                                value={note}
-                                onChange={(e) => setNote(e.target.value)}
-                                placeholder="Enter a note"
-                                className="p-2 border border-gray-300 rounded"
-                            />
-                            <button
-                                onClick={handleSaveNote}
-                                className="ml-2 p-2 bg-blue-500 text-white rounded"
-                            >
-                                Save
-                            </button>
-                        </div>
-
-                        <div>
-                            {notes.length > 0 ? (
-                                <ul>
-                                    {notes.map((note, index) => (
-                                        <li key={index} className="mb-2 p-2 border-b border-gray-300">
-                                            {note}
-                                        </li>
-                                    ))}
-                                </ul>
-                            ) : (
-                                <p>No notes available. Start adding some!</p>
-                            )}
-                        </div>
-                    </div>
+                   
                 </div>
             </section>
         </>
