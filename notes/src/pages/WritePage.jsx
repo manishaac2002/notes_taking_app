@@ -1,18 +1,12 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
-import CalendarEvent from '../components/CalendarEvent';
+import { EditorContent, EditorRoot } from "novel";
+
 
 const WritePage = () => {
     const navigate = useNavigate()
-    const [note, setNote] = useState('');
-    const [notes, setNotes] = useState([]);
-
-    const handleSaveNote = () => {
-        if (note.trim()) {
-            setNotes([...notes, note]);
-            setNote(''); // Clear the input after saving
-        }
-    };
+    const [content, setContent] = useState(null); 
+   
     return (
         <><section className="rounded-2xl m-2 p-5 mb-10 bg-gray-100">
 
@@ -50,8 +44,16 @@ const WritePage = () => {
         </section>
             <section>
                 <div className='border border-black m-2 '>
+                    <EditorRoot>
+                        <EditorContent
+                            initialContent={content}
+                            onUpdate={({ editor }) => {
+                                const json = editor.getJSON();
+                                setContent(json);
+                            }}
+                        />
+                    </EditorRoot>
 
-                   
                 </div>
             </section>
         </>

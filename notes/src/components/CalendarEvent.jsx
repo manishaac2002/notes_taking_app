@@ -36,8 +36,6 @@ const CalendarEvent = () => {
 
         {/* Calender module */}
         <div className='border border-black m-2 '>
-          {/* Add some styling to center the date */}
-
             
           <div className='flex justify-center p-2 m-2'>
             <p className='text-3xl bg-gray-400 text-white font-semibold font-custom px-3 py-2 rounded-md'>Calendar</p>
@@ -50,7 +48,7 @@ const CalendarEvent = () => {
               onClickDay={handleDateClick}
               value={date}
               className="custom-calendar font-custom"
-              onChange={setDate} // Ensure that the date updates correctly on calendar day click
+              onChange={setDate} 
             />
           </div>
         </div>
